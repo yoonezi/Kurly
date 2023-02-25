@@ -1,0 +1,10 @@
+.LogoBeutyButton:before {
+  content: "";
+  position: absolute;
+  top: 60%;
+  left: 18%;
+  bottom: 0;
+  background-color: #ebebeb;
+  width: 1px;
+  height: 16px;
+}
