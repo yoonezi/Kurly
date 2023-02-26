@@ -1,76 +1,63 @@
-import {
-  HeadTop,
-  UserHead,
-  HeadUserLink,
-  HeadeVertical,
-  ServiceCenter,
-  ServiceIcon,
-  ServiceNav,
-  HeadMain,
-  HeadLeft,
-  LogoButton,
-  HeadCenter,
-  SearchForm,
-  HeadRight,
-  HeadRightContents,
-  CartIconWrap,
-  LogoBeutyButton,
-} from "./styles";
+import { ServiceCenter, ServiceNav } from "./styles";
 import logo from "./logo.svg";
 import "./styles.css";
 
 export default function Header() {
   return (
     <>
-      <HeadTop>
-        <UserHead>
+      <div className="HeadTop">
+        <div className="UserHead">
           <>
-            <HeadUserLink to="/join">회원가입</HeadUserLink>
-            <HeadeVertical />
-            <HeadUserLink to="/login" style={{ color: "inherit" }}>
+            <div className="HeadUserLink" to="/join">
+              회원가입
+            </div>
+            <div className="HeadeVertical" />
+            <div
+              className="HeadUserLink"
+              to="/login"
+              style={{ color: "inherit" }}
+            >
               로그인
-            </HeadUserLink>
+            </div>
           </>
 
-          <HeadeVertical />
+          <div className="HeadeVertical" />
           <ServiceCenter>
-            <HeadUserLink to="/" style={{ color: "inherit" }}>
+            <div className="HeadUserLink" to="/" style={{ color: "inherit" }}>
               고객센터
-              <ServiceIcon />
+              <div className="ServiceIcon" />
               <ServiceNav>
                 <div>공지사항</div>
                 <div>자주하는 질문</div>
                 <div>1:1 문의</div>
                 <div>대량주문 문의</div>
               </ServiceNav>
-            </HeadUserLink>
+            </div>
           </ServiceCenter>
-        </UserHead>
-        <HeadMain>
-          <HeadLeft to="/">
+        </div>
+        <div className="HeadMain">
+          <div className="HeadLeft" to="/">
             <img src={logo} alt="마켓컬리 로고" />
-            <LogoButton>마켓컬리</LogoButton>
-            <LogoBeutyButton className="LogoBeutyButton">
-              뷰티컬리
-            </LogoBeutyButton>
-          </HeadLeft>
-          <HeadCenter>
-            <SearchForm>
+            <div className="LogoButton">마켓컬리</div>
+            <div className="LogoBeutyButton">뷰티컬리</div>
+          </div>
+          <div className="HeadCenter">
+            <div className="SearchForm">
               <input placeholder="검색어를 입력해주세요" required />
               <button></button>
-            </SearchForm>
-          </HeadCenter>
-          <HeadRight>
-            <HeadRightContents>
+            </div>
+          </div>
+          <div className="HeadRight">
+            <div className="HeadRightContents">
               <div></div>
               <button aria-label="찜하기" type="button"></button>
-              <CartIconWrap>
+              <div className="CartIconWrap">
                 <button></button>
-              </CartIconWrap>
-            </HeadRightContents>
-          </HeadRight>
-        </HeadMain>
-      </HeadTop>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
