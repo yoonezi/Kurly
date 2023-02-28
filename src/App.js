@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Header from "./Common/Header/Header";
 import NavHeader from "./Common/Header/NavHeader/NavHeader";
+import Banner from "./components/Banner";
 // import Category from "./Common/Header/element/Category";
 import Detail from "./pages/Detail";
 import Login from "./pages/Login";
@@ -18,6 +19,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <NavHeader />
+        <Banner />
         <Routes>
           {/* localhost:3000**으로 페이지가 바뀔 때 마다 보이는 것을 확인할 수 있다. 즉, 페이지 이동을 만들어준거임 */}
           <Route path="/" element={<Main />} />
