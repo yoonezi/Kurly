@@ -1,6 +1,7 @@
 import { ServiceCenter, ServiceNav } from "./styles";
 import logo from "./logo.svg";
 import "./styles.css";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -8,10 +9,12 @@ export default function Header() {
       <div className="HeadTop">
         <div className="UserHead">
           <>
-            <div className="HeadUserLink" to="/join">
+            <div className="HeadUserLink" to="/signup">
               회원가입
             </div>
+
             <div className="HeadeVertical" />
+
             <div
               className="HeadUserLink"
               to="/login"
@@ -22,6 +25,7 @@ export default function Header() {
           </>
 
           <div className="HeadeVertical" />
+
           <ServiceCenter>
             <div className="HeadUserLink" to="/" style={{ color: "inherit" }}>
               고객센터
@@ -35,10 +39,12 @@ export default function Header() {
             </div>
           </ServiceCenter>
         </div>
+
         <div className="HeadMain">
           <div className="HeadLeft" to="/">
             <img src={logo} alt="마켓컬리 로고" />
             <div className="LogoButton">마켓컬리</div>
+            <div className="HeadeVertical" style={{ marginRight: "-6px" }} />
             <div className="LogoBeutyButton">뷰티컬리</div>
           </div>
           <div className="HeadCenter">
