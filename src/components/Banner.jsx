@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import useInterval from "../Hooks/useInterval";
 
@@ -43,7 +43,20 @@ const slides = [
 
 export default function Banner() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [Interval, setInterval] = useState(false);
+  const [Interval] = useState(false);
+
+  function handleSwiper(direction) {
+    // 현재index + direction이 슬라이드 총 개수와 동일할때 즉, 마지막페이지일때 현재 인덱스를 0인 처음으로 바꿔줌
+    if (currentIndex + direction === slides.length) {
+      setCurrentIndex(0);
+      // 뒤로 가기 했을 때 마지막에서 -direction만큼 해주기
+    } else if (currentIndex + direction < 0) {
+      setCurrentIndex(slides.length - 1);
+    } else {
+      // 현재 인덱스를 현재인덱스 + 파라미터값으로 바꿔줌
+      setCurrentIndex((currentIndex) => currentIndex + direction);
+    }
+  }
 
   useInterval(
     () => {
@@ -63,6 +76,8 @@ export default function Banner() {
     <MainBanner>
       <SwiperWrap>
         <Swiper>
+          <SlideButton onClick={() => handleSwiper(-1)}></SlideButton>
+          <SlideButton onClick={() => handleSwiper(1)}></SlideButton>
           <SlideWrap
             style={{
               transform: `translateX(${currentIndex * -100}%) `,
@@ -96,12 +111,49 @@ export const SwiperWrap = styled.div`
   margin: 0px auto 40px;
 `;
 
+export const SwiperWrapper = styled.div`
+  position: relative;
+  height: fit-content;
+  max-width: 1900px;
+  margin: 0px auto 40px;
+`;
+
+export const SlideButton = styled.button`
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  right: 50%;
+  margin: auto 590px auto 0px;
+  z-index: 10;
+  width: 52px;
+  height: 52px;
+  transition: all 0.5s ease 0s;
+  opacity: 0;
+  background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTIiIGhlaWdodD0iNTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxIDEpIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxjaXJjbGUgZmlsbC1vcGFjaXR5PSIuMiIgZmlsbD0iIzAwMCIgY3g9IjI1IiBjeT0iMjUiIHI9IjI1Ii8+CiAgICAgICAgPHBhdGggZD0iTTIyLjI4NSAzMy42OTlhMSAxIDAgMCAwIDEuMzE5LjA5OGwuMDk1LS4wODIgOC03LjgxN2ExIDEgMCAwIDAgLjEwOC0xLjMwNmwtLjA4LS4wOTYtNy43MjMtOC4xODJhMSAxIDAgMCAwLTEuNTM1IDEuMjc2bC4wOC4wOTYgNy4wNDkgNy40NjktNy4yOTcgNy4xM2ExIDEgMCAwIDAtLjA5OCAxLjMxOWwuMDgyLjA5NXoiIGZpbGw9IiNGRkYiIGZpbGwtcnVsZT0ibm9uemVybyIvPgogICAgPC9nPgo8L3N2Zz4K)
+    50% 50% no-repeat;
+  transform: rotate(180deg);
+  cursor: pointer;
+  border: none;
+`;
+
 export const Swiper = styled.div`
   position: relative;
   overflow: hidden;
   list-style: none;
   padding: 0;
   z-index: 1;
+  &:hover {
+    ${SlideButton} {
+      opacity: 1;
+    }
+  }
+  ${SlideButton} {
+    &:nth-child(2) {
+      transform: rotate(0deg);
+      right: 0%;
+      left: 90%;
+    }
+  }
 `;
 
 export const SlideWrap = styled.div`
