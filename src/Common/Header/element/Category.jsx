@@ -21,9 +21,11 @@ export const CategoryContainer = styled.div`
     line-height: 20px;
     letter-spacing: -0.3px;
     color: rgb(51, 51, 51);
-    :hover {
+  }
+  :hover {
+    cursor: pointer;
+    & span {
       color: rgb(95, 0, 128);
-      cursor: pointer;
     }
   }
 `;

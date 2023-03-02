@@ -13,7 +13,7 @@ export default function NavHeader() {
           </NavRight>
           <NavCenter />
           <NavLeft>
-            <a href="">
+            <a href="/">
               <InfoDelivery>
                 <span>샛별・택배 </span>
                 배송안내

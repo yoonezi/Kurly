@@ -50,6 +50,7 @@ export const Center = styled.ul`
     height: 55px;
     line-height: 20px;
     text-align: center;
+    color: #333;
     & span:hover {
       text-decoration: underline;
       color: rgb(95, 0, 128);
@@ -64,5 +65,10 @@ export const NavLink = styled(Link)`
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
-  color: rgb(95, 0, 128);
+  color: #333;
+  :hover {
+    text-decoration: underline;
+    color: rgb(95, 0, 128);
+    cursor: pointer;
+  }
 `;
