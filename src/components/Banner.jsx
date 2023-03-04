@@ -194,7 +194,7 @@ export const BannerCount = styled.div`
   justify-content: center;
   width: 55px;
   height: 23px;
-  right: 109px;
+  right: 280px;
   bottom: 20px;
   line-height: 23px;
   font-size: 14px;

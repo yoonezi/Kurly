@@ -24,10 +24,12 @@ export default function SuggestDymmy(props) {
           <PriceInfo>
             <PriceBox>
               <PirceDC>5%</PirceDC>
-              <span>{props.price} 원</span>
+              <span>
+                {parseInt(props.price * 0.95).toLocaleString("ko-kr")}원
+              </span>
             </PriceBox>
           </PriceInfo>
-          <RealPrice>{props.price}원</RealPrice>
+          <RealPrice>{props.price.toLocaleString("ko-kr")}원</RealPrice>
         </ProductInfo>
       </ProductBox>
     </Wrapper>
