@@ -44,13 +44,13 @@ export const Center = styled.ul`
 
   & li {
     display: flex;
-    -webkit-box-pack: center;
     justify-content: center;
     width: 150px;
     height: 55px;
+    padding-top: 18px;
     line-height: 20px;
     text-align: center;
-    color: #333;
+
     & span:hover {
       text-decoration: underline;
       color: rgb(95, 0, 128);

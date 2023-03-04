@@ -4,35 +4,37 @@ import { Link } from "react-router-dom";
 
 export default function SuggestDymmy(props) {
   return (
-    <Wrapper to={``}>
-      <ProductBox>
-        <ListImageBox>
-          <img src={props.url} alt="제안사진" />
-          <div>
-            <CartButton>
-              <img
-                src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDUiIGhlaWdodD0iNDUiIHZpZXdCb3g9IjAgMCA0NSA0NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGNpcmNsZSBmaWxsPSIjMkEwMDM4IiBvcGFjaXR5PSIuNSIgY3g9IjIyLjUiIGN5PSIyMi41IiByPSIyMi41Ii8+CiAgICAgICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTEuMDMgMTQuMzgpIiBzdHJva2U9IiNGRkYiIHN0cm9rZS1saW5lY2FwPSJzcXVhcmUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogICAgICAgICAgICA8cGF0aCBzdHJva2Utd2lkdGg9IjEuNCIgZD0ibTIwLjQ2IDIuOTEtMi4xNyA5LjIzSDUuODdMMy43MSAyLjkxeiIvPgogICAgICAgICAgICA8Y2lyY2xlIHN0cm9rZS13aWR0aD0iMS4yIiBjeD0iMTYuMzUiIGN5PSIxNi44NiIgcj0iMS43Ii8+CiAgICAgICAgICAgIDxjaXJjbGUgc3Ryb2tlLXdpZHRoPSIxLjIiIGN4PSI3LjgyIiBjeT0iMTYuODYiIHI9IjEuNyIvPgogICAgICAgICAgICA8cGF0aCBzdHJva2Utd2lkdGg9IjEuNCIgZD0iTTAgMGgzLjAybDEuNDEgNS45OCIvPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg=="
-                alt="장바구니 아이콘"
-              />
-            </CartButton>
-          </div>
-        </ListImageBox>
+    <>
+      <Wrapper to={``}>
+        <ProductBox>
+          <ListImageBox>
+            <img src={props.url} alt="제안사진" />
+            <div>
+              <CartButton>
+                <img
+                  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDUiIGhlaWdodD0iNDUiIHZpZXdCb3g9IjAgMCA0NSA0NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGNpcmNsZSBmaWxsPSIjMkEwMDM4IiBvcGFjaXR5PSIuNSIgY3g9IjIyLjUiIGN5PSIyMi41IiByPSIyMi41Ii8+CiAgICAgICAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTEuMDMgMTQuMzgpIiBzdHJva2U9IiNGRkYiIHN0cm9rZS1saW5lY2FwPSJzcXVhcmUiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPgogICAgICAgICAgICA8cGF0aCBzdHJva2Utd2lkdGg9IjEuNCIgZD0ibTIwLjQ2IDIuOTEtMi4xNyA5LjIzSDUuODdMMy43MSAyLjkxeiIvPgogICAgICAgICAgICA8Y2lyY2xlIHN0cm9rZS13aWR0aD0iMS4yIiBjeD0iMTYuMzUiIGN5PSIxNi44NiIgcj0iMS43Ii8+CiAgICAgICAgICAgIDxjaXJjbGUgc3Ryb2tlLXdpZHRoPSIxLjIiIGN4PSI3LjgyIiBjeT0iMTYuODYiIHI9IjEuNyIvPgogICAgICAgICAgICA8cGF0aCBzdHJva2Utd2lkdGg9IjEuNCIgZD0iTTAgMGgzLjAybDEuNDEgNS45OCIvPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg=="
+                  alt="장바구니 아이콘"
+                />
+              </CartButton>
+            </div>
+          </ListImageBox>
 
-        <ProductInfo>
-          <h4>{props.text}</h4>
+          <ProductInfo>
+            <h4>{props.text}</h4>
 
-          <PriceInfo>
-            <PriceBox>
-              <PirceDC>5%</PirceDC>
-              <span>
-                {parseInt(props.price * 0.95).toLocaleString("ko-kr")}원
-              </span>
-            </PriceBox>
-          </PriceInfo>
-          <RealPrice>{props.price.toLocaleString("ko-kr")}원</RealPrice>
-        </ProductInfo>
-      </ProductBox>
-    </Wrapper>
+            <PriceInfo>
+              <PriceBox>
+                <PirceDC>5%</PirceDC>
+                <span>
+                  {parseInt(props.price * 0.95).toLocaleString("ko-kr")}원
+                </span>
+              </PriceBox>
+            </PriceInfo>
+            <RealPrice>{props.price.toLocaleString("ko-kr")}원</RealPrice>
+          </ProductInfo>
+        </ProductBox>
+      </Wrapper>
+    </>
   );
 }
 
