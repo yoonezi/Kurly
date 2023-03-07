@@ -1,6 +1,8 @@
 import { ServiceCenter, ServiceNav } from "./styles";
 import logo from "./logo.svg";
 import "./styles.css";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -8,15 +10,19 @@ export default function Header() {
       <div className="HeadTop">
         <div className="UserHead">
           <>
-            <div className="HeadUserLink" to="/signup">
+            <HeadUserLink className="HeadUserLink" to="/signup">
               회원가입
-            </div>
+            </HeadUserLink>
 
             <div className="HeadeVertical" />
 
-            <div className="HeadUserLink" to="/login" style={{ color: "#333" }}>
+            <HeadUserLink
+              className="HeadUserLink"
+              to="/login"
+              style={{ color: "#333" }}
+            >
               로그인
-            </div>
+            </HeadUserLink>
           </>
 
           <div className="HeadeVertical" />
@@ -38,7 +44,9 @@ export default function Header() {
         <div className="HeadMain">
           <div className="HeadLeft" to="/">
             <img src={logo} alt="마켓컬리 로고" />
-            <div className="LogoButton">마켓컬리</div>
+            <HeadUserLink className="LogoButton" to="/">
+              마켓컬리
+            </HeadUserLink>
             <div className="HeadeVertical" style={{ marginRight: "-6px" }} />
             <div className="LogoBeutyButton">뷰티컬리</div>
           </div>
@@ -62,3 +70,11 @@ export default function Header() {
     </>
   );
 }
+
+export const HeadUserLink = styled(Link)`
+  display: block;
+  cursor: pointer;
+  background-color: transparent;
+  text-decoration: none;
+  color: rgb(95, 0, 128);
+`;

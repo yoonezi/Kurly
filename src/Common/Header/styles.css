@@ -17,14 +17,6 @@
   align-items: center;
 }
 
-.HeadUserLink {
-  display: block;
-  cursor: pointer;
-  background-color: transparent;
-  text-decoration: none;
-  color: rgb(95, 0, 128);
-}
-
 .HeadeVertical {
   width: 1px;
   height: 13px;

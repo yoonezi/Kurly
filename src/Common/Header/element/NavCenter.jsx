@@ -4,11 +4,6 @@ import styled from "styled-components";
 
 export default function NavCenter() {
   return (
-    // <NavCenterWrap>
-    //   <Category>
-    //     <span>카테고리</span>
-    //   </Category>
-
     <Center>
       <li>
         <NavLink to="/newproduct">신상품</NavLink>
