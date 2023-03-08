@@ -4,7 +4,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Detail from "./pages/Detail";
 import Login from "./pages/Login";
 import Main from "./pages/Main";
-import NewProduct from "./pages/NewProduct";
+import NewItem from "./pages/NewItem";
+
 import NotFound from "./pages/NotFound";
 import Product from "./pages/Product";
 import SignUp from "./pages/SignUp";
@@ -20,7 +21,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/product/:title" element={<Detail />} />
           <Route path="/product" element={<Product />} />
-          <Route path="/newproduct" element={<NewProduct />} />
+          <Route path="/newproduct" element={<NewItem />} />
           <Route path="/*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
