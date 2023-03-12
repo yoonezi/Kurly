@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../Common/Header/Header";
 import NavHeader from "../Common/Header/NavHeader/NavHeader";
 import styled from "styled-components";
@@ -8,6 +8,8 @@ import NewItemList from "../components/NewItemList";
 import ViewContent from "./Product";
 
 export default function NewItem() {
+  const [checkedElement, setCheckedElement] = useState(null);
+
   return (
     <>
       <Header />
@@ -27,18 +29,44 @@ export default function NewItem() {
             </FilterTitle>
             <div>
               <FilterCategory>
-                <button>
-                  <h3>카테고리</h3>
-                </button>
-                <FilterClick>
-                  <ViewContent />
-                  {/* <li>
+                <ViewContent>
+                  <li>
                     <a href="/">
                       <span>국·반찬·메인요리</span>
                       <h3>32</h3>
                     </a>
-                  </li> */}
-                </FilterClick>
+                  </li>
+                  <li>
+                    <a href="/">
+                      <span>국·반찬·메인요리</span>
+                      <h3>32</h3>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/">
+                      <span>국·반찬·메인요리</span>
+                      <h3>32</h3>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/">
+                      <span>국·반찬·메인요리</span>
+                      <h3>32</h3>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/">
+                      <span>국·반찬·메인요리</span>
+                      <h3>32</h3>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/">
+                      <span>국·반찬·메인요리</span>
+                      <h3>32</h3>
+                    </a>
+                  </li>
+                </ViewContent>
               </FilterCategory>
             </div>
           </NewItemFilter>
